@@ -52,7 +52,7 @@ const DownloadSection = () => {
     }, 300);
   };
 
-  const getStatusIcon = (status) => {
+  const getStatusIcon = (status: "pass" | "warning" | "fail") => {
     switch (status) {
       case "pass":
         return <Check className="h-5 w-5 text-green-500 animate-bounce" />;
