@@ -1,5 +1,5 @@
 import { TempoInit } from "./tempo-init";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { Providers } from "./providers";

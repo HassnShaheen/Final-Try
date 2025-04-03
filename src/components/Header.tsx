@@ -18,8 +18,8 @@ const Header = ({
     { label: "Features", href: "#features" },
     { label: "Tools", href: "#documentation" },
     { label: "Download", href: "#download" },
+    { label: "Future Plugins", href: "#future-plugins" },
     { label: "Testimonials", href: "#testimonials" },
-    { label: "Pricing", href: "#pricing" },
     { label: "Contact Us", href: "#contact" },
   ],
 }: HeaderProps) => {
@@ -44,15 +44,6 @@ const Header = ({
 
   return (
     <>
-      <div
-        className="custom-cursor"
-        style={{
-          left: `${cursorPosition.x}px`,
-          top: `${cursorPosition.y}px`,
-          opacity: isHovering ? 1 : 0.7,
-        }}
-      ></div>
-
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           {/* Logo */}

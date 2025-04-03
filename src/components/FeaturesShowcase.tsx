@@ -3,25 +3,35 @@
 import React from "react";
 import { PlayCircle } from "lucide-react";
 
+interface PluginFeatureProps {
+  title: string;
+  description: React.ReactNode;
+  video?: string;
+  thumbnail?: string;
+}
+
 const PluginFeatures = () => {
-  const features = [
+  const features: PluginFeatureProps[] = [
     {
       title: "CAD to Revit Grids Conversion",
       description:
         "Easily convert CAD X-lines to native Revit grids with a single click.",
       video: "https://youtu.be/WtLZa3-qZPM?si=BlGgMBZoKJn7Pa6h",
+      thumbnail: "https://img.youtube.com/vi/WtLZa3-qZPM/maxresdefault.jpg",
     },
     {
       title: "Grid Renaming Tool",
       description:
         "Rename all Revit grids flexibly as per your desired naming convention.",
       video: "https://youtu.be/WtLZa3-qZPM?si=BlGgMBZoKJn7Pa6h",
+      thumbnail: "https://img.youtube.com/vi/WtLZa3-qZPM/maxresdefault.jpg",
     },
     {
       title: "AI-Based Level Modeling",
       description:
         "Automatically detect and model levels from CAD drawings using AI.",
       video: "https://youtu.be/p-XUUXwkJ-0?si=12bgbGN-EriM8Mc4",
+      thumbnail: "https://img.youtube.com/vi/p-XUUXwkJ-0/maxresdefault.jpg",
     },
     {
       title: "Beam Modeling – 3 Flexible Methods",
@@ -65,30 +75,35 @@ const PluginFeatures = () => {
       description:
         "Model foundations directly from CAD tables without Excel – first of its kind!",
       video: "https://youtu.be/1o9JTh4xqqM?si=-p1VxKfHfF5t-HLJ",
+      thumbnail: "https://img.youtube.com/vi/1o9JTh4xqqM/maxresdefault.jpg",
     },
     {
       title: "Column Modeling by Level or Height",
       description:
         "Quickly model all columns based on selected levels or custom heights.",
       video: "https://youtu.be/BA3jRZKLAjQ?si=DmMxPHwtQukADK56",
+      thumbnail: "https://img.youtube.com/vi/BA3jRZKLAjQ/maxresdefault.jpg",
     },
     {
       title: "Auto Dimension for Grids and Levels",
       description:
         "Automatically generate dimensions for all grids and levels in your model.",
       video: "https://youtu.be/jOu19Zmo6sA?si=VGnheOsb8koierte",
+      thumbnail: "https://img.youtube.com/vi/jOu19Zmo6sA/maxresdefault.jpg",
     },
     {
       title: "Line-Based Dimensioning Tool",
       description:
         "Create dimensions along any line crossing elements in the model.",
-      video: "https://youtu.be/jOu19Zmo6sA?si=VGnheOsb8koierte",
+      video: "https://youtu.be/Xj0FUxA3N9c?si=Vy_aBDQwXJXQXQZP",
+      thumbnail: "https://img.youtube.com/vi/Xj0FUxA3N9c/maxresdefault.jpg",
     },
     {
       title: "CAD Cleanup & Overlap Detection",
       description:
         "Detect and highlight overlapping lines in messy CAD drawings – choose what to delete.",
-      video: "https://youtu.be/jOu19Zmo6sA?si=VGnheOsb8koierte",
+      video: "https://youtu.be/KZvVw6TuBYk?si=Vy_aBDQwXJXQXQZP",
+      thumbnail: "https://img.youtube.com/vi/KZvVw6TuBYk/maxresdefault.jpg",
     },
     {
       title: "Full Auto-Update System",
@@ -119,9 +134,18 @@ const PluginFeatures = () => {
                 <a
                   href={feature.video}
                   target="_blank"
-                  className="ml-2 text-primary hover:text-primary/80"
+                  className="ml-2 text-primary hover:text-primary/80 group relative"
                 >
                   <PlayCircle className="h-5 w-5 inline" />
+                  {feature.thumbnail && (
+                    <div className="absolute -top-32 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 pointer-events-none">
+                      <img
+                        src={feature.thumbnail}
+                        alt={feature.title}
+                        className="w-48 h-auto rounded-md shadow-lg border border-border"
+                      />
+                    </div>
+                  )}
                 </a>
               )}
             </h3>
